@@ -59,6 +59,9 @@ private extension CustomView {
 		layer.shadowOffset = CGSize(width: 5, height: 5)
 		layer.shadowRadius = 10
 		
+		widthAnchor.constraint(equalToConstant: 350).isActive = true
+		heightAnchor.constraint(equalToConstant: 170).isActive = true
+		
 		addSubviews()
 		
 		setupTitleLabel()
@@ -81,7 +84,7 @@ private extension CustomView {
 	}
 	
 	func setupDescription() {
-		descriptionLabel.numberOfLines = 0
+		descriptionLabel.numberOfLines = 3
 	}
 	
 	func setupPriceLabel() {
@@ -115,12 +118,10 @@ private extension CustomView {
 
 			descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 			descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-			descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-			descriptionLabel.widthAnchor.constraint(equalToConstant: 170),
+			descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
 			
 			priceLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-			priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-			priceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+			priceLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8)
 		])
 	}
 }
